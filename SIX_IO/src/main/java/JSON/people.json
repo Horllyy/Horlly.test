@@ -1,0 +1,16 @@
+{
+  "people": [
+    {
+      "name": "Tony Stark",
+      "age": 44
+    },
+    {
+      "name": "Scarrlet",
+      "age": 35
+    },
+    {
+      "name": "Peter Parker",
+      "age": 32
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json的学习小例子01</title>
+</head>
+<body bgcolor="#696969">
+<h5>this is a simple test111100022221.</h5>
+
+<ul id="people"></ul>
+<script>
+
+    var xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function () {
+        if(this.readyState==4&&this.status==200){
+            var response=JSON.parse(xhttp.responseText);
+            var people=response.people;
+
+            var output="";
+            for (var i = 0; i <people.parents.length; i++) {
+                output+='<li>'+people[i].name+'<li>';
+            }//遍历数组
+
+            document.getElementById('people').innerHTML=output;
+            // document.getElementById("demo").innerText=xhttp.responseText;
+        }
+    };
+    xhttp.open("GET","people.json",true);
+    xhttp.send();
+    /*
+    var people={
+        name:"Lucy",
+        age:17,
+        address: {
+            country:"China",
+            city:"HangZhou"
+        },
+        parents:["Tom Wang","Betty Chen"],
+        email:function () {
+            return '1113858635@qq.com';
+        }
+    }
+
+    people=JSON.stringify(people);
+    people=JSON.parse(people);
+
+    var output="";
+    for (var i = 0; i <people.parents.length; i++) {
+        output+='<li>'+people.parents[i]+'<li>';
+    }//遍历数组
+
+    document.getElementById('people').innerHTML=output;
+    // alert(people.address.city);
+    // console.log(people.email());
+    */
+
+</script>
+
+</body>
+</html>
